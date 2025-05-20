@@ -31,17 +31,27 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact Me</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#">
+                            <select name="members-name" id="members-name">
+                                <option value="0">--SELECT USER--</option>
+                                <option value="1">Affinia Maghrysa Bhakti Yudianti</option>
+                                <option value="2">Ante Indiaz</option>
+                                <option value="3">Cahaya Noval Linda Sianturi</option>
+                                <option value="4">Dwiki Muhammad Nugrahanto</option>
+                                <option value="4">Intan Maulana Puspitasari</option>
+                            </select></a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead text-white text-center" style="background-image: url('assets/img/bg-header.jpg'); background-size: cover; background-position: center;">
+        <header class="masthead text-white text-center" style="background-image: url('assets/img/background-one.jpg'); background-size: cover; background-position: center;">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="assets/img/idea.png" alt="" />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Affinia Maghrysa B.Y</h1>
+                <div id="user-name"></div>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -49,10 +59,10 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Quality Assurance Engineer</p>
+                <div id="current-position"></div>
             </div>
         </header>
-        <!-- Experiance Section-->
+        <!-- Experiences Section-->
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
                 <!-- Portfolio Section Heading-->
@@ -63,36 +73,10 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/software-as-service.png" alt="" style="max-width: 200px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/point-of-service.png" alt="" style="max-width: 200px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/dashboard.png" alt="" style="max-width: 200px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
-                        </div>
-                    </div>
-                </div>
+
+                <!-- Work Experiences work item -->
+                <div class="row justify-content-center" id="portfolio-items-container"></div>
+                <div id="portfolio-modals-container"></div>
             </div>
         </section>
 
@@ -108,81 +92,13 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioProject1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/apps-gt-one.png" alt="" style="max-width: 300px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioProject2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/GT-ES.png" alt="" style="max-width: 300px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioProject3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/eoviz-lite.png" alt="" style="max-width: 300px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioProject4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/sidig.png" alt="" style="max-width: 300px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioProject5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/majoo.png" alt="" style="max-width: 300px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioProject6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/mass-muf.png" alt="" style="max-width: 300px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
-                        </div>
-                    </div>
-                </div>
+                <div class="row justify-content-center" id="portfolio-container"></div>
             </div>
         </section>
+
         <!-- About Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-12 ml-auto"><p class="lead">Experienced in the world of application testing or quality assurance with a proven work history in the information technology and services industry. Understand mobile and dashboard testing in methodology manual test, able to create project support documents and user training.</p></div>
-                </div>
-                <!-- About Section Button-->
-            </div>
+            <div id="about"></div>
         </section>
         <!-- Contact Section-->
         <section class="page-section" id="contact">
@@ -238,6 +154,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
@@ -261,6 +178,7 @@
                 </div>
             </div>
         </footer>
+
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
             <div class="container"><small>Copyright © Affinia Maghrysa</small></div>
@@ -268,184 +186,6 @@
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
         <div class="scroll-to-top d-lg-none position-fixed">
             <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
-        </div>
-        <!-- Portfolio Modals Work Experience-->
-        <!-- Portfolio Modal 1 GT-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title -->
-                                    <h3 class="text-primary text-uppercase mb-3" style="font-size: 24px; font-weight: 700; letter-spacing: 1px;">
-                                        Application Support
-                                    </h3>
-
-                                    <!-- Portfolio Modal - Subtitle -->
-                                    <h5 class="text-muted mb-4" style="font-size: 16px; font-weight: 400;">
-                                        PT Gamatechno Indonesia <br>
-                                        <span style="font-style: italic;">June 2019 – January 2022</span><br>
-                                        Yogyakarta, Indonesia
-                                    </h5>
-
-                                    <!-- Icon Divider -->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-
-                                    <!-- Portfolio Modal - Image -->
-                                    <img class="img-fluid rounded shadow-sm mb-4" src="assets/img/portfolio/gtone.jpeg" alt="Gamatechno Logo" style="max-width: 220px;" />
-
-                                    <!-- Portfolio Modal - Text -->
-                                    <div style="font-size: 16px; font-weight: 600; color: #333; margin-bottom: 10px;">
-                                        <strong>Responsibilities</strong>
-                                    </div>
-                                    <ul class="text-left px-2" style="font-size: 15.5px; line-height: 1.8; color: #4a4a4a;">
-                                        <li><strong>Executed</strong> manual testing for mobile and web platforms to ensure optimal functionality.</li>
-                                        <li><strong>Prepared</strong> detailed documentation aligned with standard QA protocols.</li>
-                                        <li><strong>Evaluated</strong> UI/UX consistency to match client requirements and design guidelines.</li>
-                                        <li><strong>Collaborated</strong> effectively with project managers, developers, and stakeholders.</li>
-                                        <li><strong>Conducted</strong> various types of testing: functional, content validation, and performance analysis.</li>
-                                        <li><strong>Compiled</strong> insightful progress reports and led UAT sessions for client sign-off.</li>
-                                        <li><strong>Delivered</strong> user training sessions to ensure smooth onboarding and product adoption.</li>
-                                    </ul>
-
-                                    <!-- Close Button -->
-                                    <button class="btn btn-outline-primary mt-4" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i> Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 2 Majoo-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title -->
-                                    <h3 class="text-primary text-uppercase mb-2" id="portfolioModal1Label" style="font-size: 22px; font-weight: 700;">
-                                        Quality Assurance Engineer
-                                    </h3>
-                                    <h5 class="text-muted mb-4" style="font-size: 16px; font-weight: 400;">
-                                        Majoo Indonesia <br>
-                                        <span style="font-style: italic;">February 2022 – February 2023</span><br>
-                                        Malang, Indonesia
-                                    </h5>
-
-                                    <!-- Icon Divider -->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-
-                                    <!-- Portfolio Modal - Image -->
-                                    <img class="img-fluid rounded shadow-sm mb-4" src="assets/img/portfolio/majoo-three.jpeg" alt="Majoo Logo" style="max-width: 200px; height: auto; margin-top: 10px;" />
-
-                                    <!-- Portfolio Modal - Description -->
-                                    <div style="font-size: 16px; font-weight: 600; color: #333; margin-bottom: 10px;">
-                                        <strong>Responsibilities</strong>
-                                    </div>
-                                    <ul class="text-left px-2" style="font-size: 15.5px; line-height: 1.8; color: #4a4a4a;">
-                                        <li><strong>Performed</strong> manual testing for mobile and web-based dashboard applications.</li>
-                                        <li><strong>Developed</strong> detailed and structured test plans and scenarios.</li>
-                                        <li><strong>Monitored</strong> compliance with improvement protocols and company regulations.</li>
-                                        <li><strong>Tested</strong> backlog items to ensure resolution and expected functionality.</li>
-                                        <li><strong>Investigated</strong> and reproduced bugs to identify root causes effectively.</li>
-                                        <li><strong>Validated</strong> quality updates and ensured retesting before release.</li>
-                                        <li><strong>Conducted</strong> API testing using Postman to troubleshoot and verify system issues.</li>
-                                    </ul>
-
-                                    <!-- Close Button -->
-                                    <button class="btn btn-outline-primary mt-4" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i> Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 3 MUF-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title -->
-                                    <h3 class="text-primary text-uppercase mb-2" id="portfolioModal1Label" style="font-size: 22px; font-weight: 700;">
-                                        IT Tester
-                                    </h3>
-                                    <h5 class="text-muted mb-1" style="font-size: 16px; font-weight: 400;">
-                                        Kobus Smart Service
-                                    </h5>
-                                    <p class="text-muted mb-3" style="font-size: 15px;">
-                                        Assigned to Mandiri Utama Finance as part of the Enterprise System Testing & Implementation team
-                                    </p>
-                                    <p class="text-muted mb-4" style="font-size: 15px;">
-                                        <span style="font-style: italic;">February 2023 – Present</span><br>
-                                        Jakarta Selatan, Indonesia
-                                    </p>
-
-                                    <!-- Icon Divider -->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-
-                                    <!-- Portfolio Modal - Image -->
-                                    <img class="img-fluid rounded shadow-sm mb-4" src="assets/img/portfolio/muf-one.jpeg" alt="Mandiri Utama Finance" style="max-width: 200px; height: auto; margin-top: 10px;" />
-
-                                    <!-- Portfolio Modal - Description -->
-                                    <div style="font-size: 16px; font-weight: 600; color: #333; margin-bottom: 10px;">
-                                        <strong>Responsibilities</strong>
-                                    </div>
-                                    <ul class="text-left px-2" style="font-size: 15.5px; line-height: 1.8; color: #4a4a4a;">
-                                        <li><strong>Executed</strong> manual testing on both mobile applications and dashboard systems.</li>
-                                        <li><strong>Validated</strong> improvements and ensured compliance with BRD-aligned protocols.</li>
-                                        <li><strong>Conducted</strong> API testing using Postman and Soap UI tools.</li>
-                                        <li><strong>Performed</strong> scenario-based testing as guided by the Team Leader, focusing on the Digital Acquisition System.</li>
-                                        <li><strong>Prepared</strong> test documentation and regular progress reports.</li>
-                                        <li><strong>Managed</strong> UAT Sign-Off procedures post-maintenance testing.</li>
-                                        <li><strong>Collaborated</strong> in bug review sessions with business analysts and developers to resolve issues efficiently.</li>
-                                        <li><strong>Executed</strong> database verifications using PL/SQL, PostgreSQL, MongoDB, and Kafka through UI interfaces.</li>
-                                    </ul>
-
-                                    <!-- Close Button -->
-                                    <button class="btn btn-outline-primary mt-4" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i> Close
-                                    </button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Portofolio Modals -->
@@ -762,6 +502,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
