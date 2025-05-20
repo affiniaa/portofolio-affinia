@@ -8,7 +8,7 @@ $(document).ready(function () {
     const selectedUserId = $(this).val();
     if (!selectedUserId) return;
 
-    //get Work Experience
+    //Get Work Experience
     $.ajax({
       url: 'http://localhost:3000/api/work-experiences/getWorkExperience',
       method: 'POST',
@@ -65,8 +65,8 @@ $(document).ready(function () {
         }
 
         //SET container data work experience & modal dynamically
-        const containerData = document.getElementById('portfolio-items-container');
-        const containerModalExperiences = document.getElementById("portfolio-modals-container");
+        const containerData = document.getElementById('experiences-items-container');
+        const containerModalExperiences = document.getElementById("experiences-modals-container");
         containerData.innerHTML = '';
         containerModalExperiences.innerHTML = '';
 
@@ -152,14 +152,18 @@ $(document).ready(function () {
         id_user: selectedUserId
       }),
       success: function (response) {
-        const portfolios = response?.data?.[0]?.data_portfolios; // <-- corrected this line
-        console.log('Portfolios:', response);
+        const portfolios = response?.data?.[0]?.data_portfolios;
 
-        const containerPortfolio = document.getElementById('portfolio-container');
-        containerPortfolio.innerHTML = ''; // clear existing content
+        if (!Array.isArray(portfolios)) {
+          console.warn('No portfolio data available.');
+          return;
+        }
 
+        const containerPortfolio = document.getElementById('portfolio-items-container');
+        containerPortfolio.innerHTML = ''; // Clear existing content
+
+        //set portofolio items
         portfolios.forEach(item => {
-          console.log(item);
           const col = document.createElement('div');
           col.className = 'col-md-6 col-lg-4 mb-5';
 
@@ -170,19 +174,74 @@ $(document).ready(function () {
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="${item.img_portfolio_src}" alt="${item.project}" style="max-width: 300px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
+              <img class="img-fluid" src="${item.img_portfolio_src}" alt="${item.project}"
+                  style="max-width: 300px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
             </div>
           `;
 
           containerPortfolio.appendChild(col);
+        });
+
+        const container = document.getElementById("portfolio-modals-container");
+        container.innerHTML = ''; // Clear existing modals before appending new ones
+
+        //set portofolio modal
+        portfolios.forEach(item => {
+          const responsibilities = item.project_responsibilities
+            .map(res => `<li><strong>${res.split(' ')[0]}</strong> ${res.slice(res.indexOf(' ') + 1)}</li>`)
+            .join("");
+
+          const modalHTML = `
+            <div class="portfolio-modal modal fade" id="portfolioModal${item.portfolio_id}" tabindex="-1" role="dialog"
+                aria-labelledby="portfolioModal${item.portfolio_id}Label" aria-hidden="true">
+              <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                  </button>
+                  <div class="modal-body text-center">
+                    <div class="container">
+                      <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                          <h3 class="text-primary text-uppercase mb-2" id="portfolioModal${item.portfolio_id}Label"
+                              style="font-size: 22px; font-weight: 700;">
+                            ${item.project}
+                          </h3>
+                          <p class="text-muted mb-4" style="font-size: 15px;">
+                            ${item.info}
+                          </p>
+                          <div class="divider-custom">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
+                          </div>
+                          <img class="img-fluid rounded shadow-sm mb-4" src="${item.img_portfolio_src}"
+                              alt="${item.project} Screenshot" style="max-width: 100%; height: auto; margin-top: 10px;" />
+                          <p class="mb-3 px-2" style="text-align: justify; font-size: 15.5px; color: #4a4a4a;">
+                            ${item.description}
+                          </p>
+                          <ul class="text-left px-2" style="font-size: 15.5px; line-height: 1.8; color: #4a4a4a;">
+                            ${responsibilities}
+                          </ul>
+                          <button class="btn btn-outline-primary mt-4" data-dismiss="modal">
+                            <i class="fas fa-times fa-fw"></i> Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+
+          container.innerHTML += modalHTML;
         });
       },
       error: function (xhr, status, error) {
         console.error('Error fetching portfolios:', error);
       }
     });
-
-
   });
 });
 
