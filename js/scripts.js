@@ -73,7 +73,7 @@ $(document).ready(function () {
         experiences.forEach(item => {
           const portfolioHTML = `
           <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#modal-${item._id}">
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#modal-${item.work_exp_id}">
               <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="portfolio-item-caption-content text-center text-white">
                   <i class="fas fa-plus fa-3x"></i>
@@ -82,58 +82,66 @@ $(document).ready(function () {
               <img class="img-fluid" src="${item.img_icon_src}" alt="" style="max-width: 200px; height: auto; display: block; margin: 0 auto; margin-top: 70px;" />
             </div>
           </div>`;
+          containerData.insertAdjacentHTML('beforeend', portfolioHTML);
+        });
 
-          const responsibilitiesList = item.work_responsibilities.map(resp => {
-            const [first, ...rest] = resp.split(" ");
-            return `<li><strong>${first}</strong> ${rest.join(" ")}</li>`;
-          }).join("");
+        console.log(experiences);
+        experiences.forEach(item => {
+          const responsibilities = Array.isArray(item.work_responsibilities)
+            ? item.work_responsibilities.map(resp => {
+                const [first, ...rest] = resp.split(" ");
+                return `<li><strong>${first}</strong> ${rest.join(" ")}</li>`;
+              }).join("")
+            : "";
 
-          const infoText = item.info ?
-            `<p class="text-muted mb-3" style="font-size: 15px;">${item.info}</p>` :
-            `<p class="text-muted mb-3" style="font-size: 15px;"></p>`;
+          const infoText = item.info
+            ? `<p class="text-muted mb-3" style="font-size: 15px;">${item.info}</p>`
+            : `<p class="text-muted mb-3" style="font-size: 15px;"></p>`;
 
           const modalHTML = `
-          <div class="portfolio-modal modal fade" id="modal-${item._id}" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-              <div class="modal-content">
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                </button>
-                <div class="modal-body text-center">
-                  <div class="container">
-                    <div class="row justify-content-center">
-                      <div class="col-lg-8">
-                        <h3 class="text-primary text-uppercase mb-3" style="font-size: 24px; font-weight: 700; letter-spacing: 1px;">${item.work_position}</h3>
-                        <h5 class="text-muted mb-4" style="font-size: 16px; font-weight: 400;">
-                          ${item.company} <br>
-                          <span style="font-style: italic;">${item.start_year} – ${item.end_year}</span><br>
-                          ${item.work_location}
-                        </h5>
-                        ${infoText}
-                        <div class="divider-custom">
-                          <div class="divider-custom-line"></div>
-                          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                          <div class="divider-custom-line"></div>
+            <div class="portfolio-modal modal fade" id="modal-${item.work_exp_id}" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                  </button>
+                  <div class="modal-body text-center">
+                    <div class="container">
+                      <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                          <h3 class="text-primary text-uppercase mb-3" style="font-size: 24px; font-weight: 700; letter-spacing: 1px;">
+                            ${item.work_position || ""}
+                          </h3>
+                          <h5 class="text-muted mb-4" style="font-size: 16px; font-weight: 400;">
+                            ${item.company || ""}<br>
+                            <span style="font-style: italic;">${item.start_year || ""} – ${item.end_year || ""}</span><br>
+                            ${item.work_location || ""}
+                          </h5>
+                          ${infoText}
+                          <div class="divider-custom">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
+                          </div>
+                          <img class="img-fluid rounded shadow-sm mb-4" src="${item.img_modal_src || ""}" alt="${item.company || ""} Logo" style="max-width: 220px;" />
+                          <div style="font-size: 16px; font-weight: 600; color: #333; margin-bottom: 10px;">
+                            <strong>Responsibilities</strong>
+                          </div>
+                          <ul class="text-left px-2" style="font-size: 15.5px; line-height: 1.8; color: #4a4a4a;">
+                            ${responsibilities}
+                          </ul>
+                          <button class="btn btn-outline-primary mt-4" data-dismiss="modal">
+                            <i class="fas fa-times fa-fw"></i> Close
+                          </button>
                         </div>
-                        <img class="img-fluid rounded shadow-sm mb-4" src="${item.img_modal_src}" alt="${item.company} Logo" style="max-width: 220px;" />
-                        <div style="font-size: 16px; font-weight: 600; color: #333; margin-bottom: 10px;">
-                          <strong>Responsibilities</strong>
-                        </div>
-                        <ul class="text-left px-2" style="font-size: 15.5px; line-height: 1.8; color: #4a4a4a;">
-                          ${responsibilitiesList}
-                        </ul>
-                        <button class="btn btn-outline-primary mt-4" data-dismiss="modal">
-                          <i class="fas fa-times fa-fw"></i> Close
-                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>`;
+          `;
 
-          containerData.insertAdjacentHTML('beforeend', portfolioHTML);
           containerModalExperiences.insertAdjacentHTML("beforeend", modalHTML);
         });
       },
