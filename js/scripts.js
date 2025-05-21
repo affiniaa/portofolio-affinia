@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     //Get Work Experience
     $.ajax({
-      url: 'http://localhost:3000/api/work-experiences/getWorkExperience',
+      url: 'https://capstone-project-nodejs.onrender.com/api/work-experiences/getWorkExperience',
       method: 'POST',
       contentType: 'application/json',
       dataType: 'json',
@@ -144,7 +144,7 @@ $(document).ready(function () {
 
     // Get Portfolios
     $.ajax({
-      url: 'http://localhost:3000/api/portfolios/getPortfolio',
+      url: 'https://capstone-project-nodejs.onrender.com/api/portfolios/getPortfolio',
       method: 'POST',
       contentType: 'application/json',
       dataType: 'json',
