@@ -3,7 +3,7 @@
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
  */
-$(document).ready(function () {
+$(document).ready(() => {
   const urlParams = new URLSearchParams(window.location.search);
   const userId = urlParams.get("id_user");
   console.log(userId);
