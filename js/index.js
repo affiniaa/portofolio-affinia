@@ -65,7 +65,7 @@ function deleteUserData(id_user) {
     Swal.fire({
       icon: 'warning',
       title: 'Peringatan',
-      text: `Hanya data dengan ID paling bawah (${maxId}) yang bisa dihapus.`,
+      text: `Mohon hapus data dari urutan paling bawah`,
     });
     return;
   }

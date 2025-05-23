@@ -43,14 +43,14 @@
     <hr class="my-5">
 
     <!-- User Profile Form -->
-    <h2 class="mb-4">User Profile Form</h2>
+    <h2 class="mb-4">Profile User</h2>
     <form id="userForm">
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" name="name" required>
       </div>
       <div class="mb-3">
-        <label for="current_position" class="form-label">Current Position</label>
+        <label for="current_position" class="form-label">Current Work Position</label>
         <input type="text" class="form-control" id="current_position" name="current_position" required>
       </div>
       <div class="mb-3">
@@ -58,7 +58,7 @@
         <textarea class="form-control" id="about" name="about" rows="3" required></textarea>
       </div>
 
-      <h4>Data Experience</h4>
+      <h4>Work Experience</h4>
       <div id="experienceContainer"></div>
       <div class="d-flex gap-2 mb-4">
         <button type="button" class="btn btn-secondary" onclick="addExperience()">+ Add Work Experience</button>
@@ -101,8 +101,8 @@
         <div class="col-md-6"><label class="form-label">Work Location</label><input type="text" name="work_location_${index}" class="form-control" required></div>
         <div class="col-md-6"><label class="form-label">Start Year</label><input type="text" name="start_year_${index}" class="form-control" required></div>
         <div class="col-md-6"><label class="form-label">End Year</label><input type="text" name="end_year_${index}" class="form-control" required></div>
-        <div class="col-md-6"><label class="form-label">Icon Src</label><input type="text" name="img_icon_src_${index}" class="form-control" required placeholder="Masukkan link imgur"></div>
-        <div class="col-md-6"><label class="form-label">Modal Src</label><input type="text" name="img_modal_src_${index}" class="form-control" required placeholder="Masukkan link imgur"></div>
+        <div class="col-md-6"><label class="form-label">Icon Src</label><input type="text" name="img_icon_src_${index}" class="form-control" required placeholder="Masukkan link dari imgur (https://img.vdoerig.com/)"></div>
+        <div class="col-md-6"><label class="form-label">Modal Src</label><input type="text" name="img_modal_src_${index}" class="form-control" required placeholder="Masukkan link dari imgur (https://img.vdoerig.com/)"></div>
         <div class="col-12"><label class="form-label">Info</label><input type="text" name="info_${index}" class="form-control"></div>
         <div class="col-12">
           <label class="form-label">Work Responsibilities</label>
@@ -212,7 +212,7 @@
         </div>
         <div class="mb-3">
           <label>Image Portfolio Source</label>
-          <input type="text" class="form-control" name="img_portfolio_src_${portfolioIndex}" placeholder="Masukkan link imgur">
+          <input type="text" class="form-control" name="img_portfolio_src_${portfolioIndex}" placeholder="Masukkan link dari imgur (https://img.vdoerig.com/)">
         </div>
         <div class="mb-3">
           <label>Project</label>
