@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() => {
   const userTable = $('#user-table-body');
   
   // Tampilkan loading state
@@ -25,7 +25,7 @@ $(document).ready(function () {
               <td>${user.current_position}</td>
               <td>
                 <button class="btn btn-sm btn-primary" onclick="window.location.href='landing-page.html?id_user=${user.id_user}'">
-                  Lihat Pengalaman
+                  View Experience
                 </button>
               </td>
             </tr>
